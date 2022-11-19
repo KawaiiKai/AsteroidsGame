@@ -1,6 +1,8 @@
 Spaceship bob = new Spaceship();
 boolean acc = false;
 boolean deacc = false;
+boolean e = false;
+boolean f = false;
 Star[] sky = new Star[200];
 public void setup() 
 {
@@ -16,35 +18,40 @@ public void draw()
    for(int i = 0; i < sky.length;i++){
     sky[i].show();
    }
+   bob.move();
    bob.show();
   if (acc == true)
-  bob.acclerate(0.5);
-  if (deacc == true)
-  bob.acclerate(-0.5);
+ bob.accelerate(0.1);
+if (deacc == true)
+ bob.accelerate(-0.1);
+ if (e == true)
+ bob.turn(-5);
+if (f == true)
+ bob.turn(5);
 }
 public void keyPressed()
 {
   if( key == 'w')
   {
-    bob.acclerate(0.5);
-    //acc = true;
+  
+    acc = true;
   }
   if( key == 's')
   {
-    bob.acclerate(-0.5);
-    //deacc = true;
+    deacc = true;
   }
   if( key == 'a')
   {
-    bob.turn(-10);
+    e = true;
   }
   if( key == 'd')
   {
-    bob.turn(10);
+    f = true;
   }
   if( key == 'h'){
    frameRate(12);
    bob.setXspeed(0);
+   bob.setYspeed(0);
    bob.setCenterX((int)(Math.random()*460)+20);
    bob.setCenterY((int)(Math.random()*460)+20);
    bob.fade();
@@ -53,9 +60,27 @@ public void keyPressed()
 public void keyReleased()
 {
   
+  if( key == 'w')
+  {
   
+    acc = false;
+  }
+  if( key == 's')
+  {
+    deacc = false;
+  }
+  if( key == 'a')
+  {
+    e = false;
+  }
+  if( key == 'd')
+  {
+    f = false;
+  }
   if( key == 'h'){
     bob.setXspeed(0);
+    bob.setYspeed(0);
+    frameRate(60);
     bob.setCenterX((int)(Math.random()*460)+20);
     bob.setCenterY((int)(Math.random()*460)+20);
     bob.unfade();
