@@ -1,6 +1,6 @@
 Spaceship bob = new Spaceship();
 boolean acc = false;
-boolean deacc = false
+boolean deacc = false;
 Star[] sky = new Star[200];
 public void setup() 
 {
