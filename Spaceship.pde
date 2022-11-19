@@ -9,8 +9,8 @@ class Spaceship extends Floater
     myColor = color(255,255,255,o);   
     myCenterX = 250;
     myCenterY = 250;    
-    myXspeed = 1; 
-    myYspeed = 1;    
+    myXspeed = 0; 
+    myYspeed = 0;    
     myPointDirection = 0; 
   }
   public void fade(){
