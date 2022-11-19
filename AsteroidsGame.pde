@@ -26,11 +26,13 @@ public void keyPressed()
 {
   if( key == 'w')
   {
-    acc = true;
+    bob.acclerate(0.5);
+    //acc = true;
   }
   if( key == 's')
   {
-    deacc = true;
+    bob.acclerate(-0.5);
+    //deacc = true;
   }
   if( key == 'a')
   {
