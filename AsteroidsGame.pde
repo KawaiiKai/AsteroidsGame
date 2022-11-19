@@ -1,4 +1,6 @@
 Spaceship bob = new Spaceship();
+boolean acc = false;
+boolean deacc = false
 Star[] sky = new Star[200];
 public void setup() 
 {
@@ -15,17 +17,20 @@ public void draw()
     sky[i].show();
    }
    bob.show();
-
+  if (acc == true)
+  bob.acclerate(0.5);
+  if (deacc == true)
+  bob.acclerate(-0.5);
 }
 public void keyPressed()
 {
   if( key == 'w')
   {
-    bob.accelerate(1);
+    acc = true;
   }
   if( key == 's')
   {
-    bob.accelerate(-1);
+    deacc = true;
   }
   if( key == 'a')
   {
