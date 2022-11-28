@@ -84,6 +84,7 @@ public void keyReleased()
   }
   if( key == 'h'){
     h = false;
+    frameRate(60);
     bob.unfade();
 }
 }
