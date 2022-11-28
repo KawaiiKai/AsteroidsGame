@@ -3,7 +3,7 @@ boolean acc = false;
 boolean deacc = false;
 boolean e = false;
 boolean f = false;
-boolean h =  false;
+boolean he =  false;
 Star[] sky = new Star[200];
 public void setup() 
 {
@@ -59,7 +59,7 @@ public void keyPressed()
     f = true;
   }
   if( key == 'h'){
-   h = true;
+   he = true;
   }
 }
 public void keyReleased()
@@ -83,7 +83,7 @@ public void keyReleased()
     f = false;
   }
   if( key == 'h'){
-    h = false;
+    he = false;
     frameRate(60);
     bob.unfade();
 }
