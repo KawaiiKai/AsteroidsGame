@@ -3,6 +3,7 @@ boolean acc = false;
 boolean deacc = false;
 boolean e = false;
 boolean f = false;
+boolean h =  false;
 Star[] sky = new Star[200];
 public void setup() 
 {
@@ -28,7 +29,16 @@ if (deacc == true)
  bob.turn(-5);
 if (f == true)
  bob.turn(5);
-}
+if(h == true){
+   frameRate(12);
+   bob.setXspeed(0);
+   bob.setYspeed(0);
+   bob.setCenterX((int)(Math.random()*460)+20);
+   bob.setCenterY((int)(Math.random()*460)+20);
+   bob.setDir(Math.random()*360);
+   bob.fade();
+   }
+   }
 public void keyPressed()
 {
   if( key == 'w')
@@ -49,12 +59,7 @@ public void keyPressed()
     f = true;
   }
   if( key == 'h'){
-   frameRate(12);
-   bob.setXspeed(0);
-   bob.setYspeed(0);
-   bob.setCenterX((int)(Math.random()*460)+20);
-   bob.setCenterY((int)(Math.random()*460)+20);
-   bob.fade();
+   h = true;
   }
 }
 public void keyReleased()
@@ -78,11 +83,7 @@ public void keyReleased()
     f = false;
   }
   if( key == 'h'){
-    bob.setXspeed(0);
-    bob.setYspeed(0);
-    frameRate(60);
-    bob.setCenterX((int)(Math.random()*460)+20);
-    bob.setCenterY((int)(Math.random()*460)+20);
+    h = false;
     bob.unfade();
 }
 }
