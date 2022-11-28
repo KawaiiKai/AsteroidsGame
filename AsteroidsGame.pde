@@ -29,7 +29,7 @@ if (deacc == true)
  bob.turn(-5);
 if (f == true)
  bob.turn(5);
-if(h == true){
+if(he == true){
    frameRate(12);
    bob.setXspeed(0);
    bob.setYspeed(0);
