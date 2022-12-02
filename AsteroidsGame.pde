@@ -1,9 +1,12 @@
 Spaceship bob = new Spaceship();
+ArrayList <Asteroid> a = new ArrayList <Asteroid>();
 boolean acc = false;
 boolean deacc = false;
 boolean e = false;
 boolean f = false;
 boolean he =  false;
+boolean fe = false;
+public int fr = 4;
 Star[] sky = new Star[200];
 public void setup() 
 {
@@ -12,6 +15,9 @@ public void setup()
   for(int i = 0; i < sky.length;i++){
     sky[i] = new Star();
   }
+  for(int i = 0; i < 25;i++){
+  a.add(new Asteroid());
+  }
 }
 public void draw() 
 {
@@ -19,6 +25,13 @@ public void draw()
    for(int i = 0; i < sky.length;i++){
     sky[i].show();
    }
+  for(int i = 0; i < a.size(); i++){
+  a.get(i).move();
+  a.get(i).show();
+  float d = dist((float)bob.getCent(),(float)bob.getCente(),(float)a.get(i).getCenterX(),(float)a.get(i).getCenterY());
+  if(d < 10)
+  a.remove(i);
+  }
    bob.move();
    bob.show();
   if (acc == true)
@@ -30,7 +43,8 @@ if (deacc == true)
 if (f == true)
  bob.turn(5);
 if(he == true){
-   frameRate(12);
+   frameRate(fr);
+   fr = fr + 1;
    bob.setXspeed(0);
    bob.setYspeed(0);
    bob.setCenterX((int)(Math.random()*460)+20);
@@ -38,13 +52,20 @@ if(he == true){
    bob.setDir(Math.random()*360);
    bob.fade();
    }
-   }
+   
+if (fe == true){
+  bob.fire();
+
+}
+}
 public void keyPressed()
 {
   if( key == 'w')
   {
   
     acc = true;
+    fe = true;
+    
   }
   if( key == 's')
   {
@@ -69,6 +90,7 @@ public void keyReleased()
   {
   
     acc = false;
+    fe = false;
   }
   if( key == 's')
   {
@@ -83,6 +105,7 @@ public void keyReleased()
     f = false;
   }
   if( key == 'h'){
+    fr = 4;
     he = false;
     frameRate(60);
     bob.unfade();
