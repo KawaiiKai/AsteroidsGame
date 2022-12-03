@@ -53,10 +53,10 @@ if(he == true){
    bob.fade();
    }
    
-if (fe == true){
-  bob.fire();
+//if (fe == true){
+  //bob.fire();
 
-}
+//}
 }
 public void keyPressed()
 {
@@ -64,7 +64,7 @@ public void keyPressed()
   {
   
     acc = true;
-    fe = true;
+    //fe = true;
     
   }
   if( key == 's')
