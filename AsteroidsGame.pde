@@ -6,7 +6,7 @@ boolean e = false;
 boolean f = false;
 boolean he =  false;
 boolean fe = false;
-public int fr = 4;
+int fr = 4;
 Star[] sky = new Star[200];
 public void setup() 
 {
@@ -45,6 +45,9 @@ if (f == true)
 if(he == true){
    frameRate(fr);
    fr = fr + 1;
+   if(fr > 60){
+    fr = 60; 
+   }
    bob.setXspeed(0);
    bob.setYspeed(0);
    bob.setCenterX((int)(Math.random()*460)+20);
@@ -55,14 +58,14 @@ if(he == true){
    
 if (fe == true){
   bob.fire();
-
 }
+
 }
 public void keyPressed()
 {
   if( key == 'w')
   {
-  
+    
     acc = true;
     fe = true;
     
