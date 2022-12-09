@@ -6,12 +6,15 @@ class Bullet extends Floater
     myXspeed = e.getSpeX(); 
     myYspeed = e.getSpeY();
     myPointDirection = e.getDir();
-    accelerate(.6);
+    accelerate(6);
     
     
   }
+  
   public void show(){
     noStroke();
     fill(255,0,0);
-    ellipse((float)myCenterX;(float)myCenterY,30,3);
+    ellipse((float)myCenterX,(float)myCenterY,10,10);
+   
+}
 }
