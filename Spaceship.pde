@@ -53,6 +53,14 @@ class Spaceship extends Floater
      {
        return myPointDirection;
      }
+     public double getSpeX()
+     {
+       return myXspeed;
+     }
+     public double getSpeY()
+     {
+       return myYspeed;
+     }
   public void fire(){
    
    float dRadians = (float)(getDir()*(Math.PI/180));
