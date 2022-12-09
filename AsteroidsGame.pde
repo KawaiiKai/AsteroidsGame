@@ -36,6 +36,11 @@ public void draw()
   if(d < 10)
   a.remove(i);
   }
+  if(a.size() == 0){
+    for(int i = 0; i < 25;i++){
+  a.add(new Asteroid());
+  }
+  }
   for(int i = 0; i < b.size(); i++){
     b.get(i).move();
     b.get(i).show();
