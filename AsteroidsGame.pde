@@ -35,7 +35,6 @@ public void draw()
   float d = dist((float)bob.getCent(),(float)bob.getCente(),(float)a.get(i).getCenterX(),(float)a.get(i).getCenterY());
   if(d < 10)
   a.remove(i);
- 
   }
   for(int i = 0; i < b.size(); i++){
     b.get(i).move();
@@ -74,6 +73,7 @@ if (fe == true){
 }
 if (shoot == true)
 b.add(new Bullet(bob));
+
 }
 public void keyPressed()
 {
