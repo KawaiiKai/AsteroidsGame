@@ -100,7 +100,7 @@ public void keyPressed()
    he = true;
   }
   if (key == ' '){
-    shoot = true;;
+    shoot = true;
   }
 }
 public void keyReleased()
