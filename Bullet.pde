@@ -1,11 +1,11 @@
 class Bullet extends Floater
 {
-  public Bullet(Spaceship e){
-    myCenterX = e.getCent();
-    myCenterY = e.getCente();
-    myXspeed = e.getSpeX(); 
-    myYspeed = e.getSpeY();
-    myPointDirection = e.getDir();
+  public Bullet(Spaceship bob){
+    myCenterX = bob.getCent();
+    myCenterY = bob.getCente();
+    myXspeed = bob.getSpeX(); 
+    myYspeed = bob.getSpeY();
+    myPointDirection = bob.getDir();
     accelerate(6);
     
     
@@ -17,4 +17,12 @@ class Bullet extends Floater
     ellipse((float)myCenterX,(float)myCenterY,10,10);
    
 }
+public double getMidX()
+       {
+      return myCenterX;
+      }
+    public double getMidY()
+      {
+      return myCenterY;
+      }
 }
