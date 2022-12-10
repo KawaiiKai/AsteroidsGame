@@ -10,7 +10,10 @@ class Bullet extends Floater
     
     
   }
-  
+  public void move(){
+    myCenterX += myXspeed;    
+    myCenterY += myYspeed;
+  }
   public void show(){
     noStroke();
     fill(255,0,0);
