@@ -43,7 +43,14 @@ public void draw()
   }
   for(int i = 0; i < b.size(); i++){
     b.get(i).move();
-    b.get(i).show();
+    b.get(i).show();;   for(int j = 0; j < a.size(); j++){
+    float e = dist((float)b.get(i).getMidX(),(float)b.get(i).getMidY(),(float)a.get(j).getCenterX(),(float)a.get(j).getCenterY());
+    if(e < 10){
+     a.remove(j);
+     b.remove(i);
+     break;
+    }
+}
   }
    bob.move();
    bob.show();
